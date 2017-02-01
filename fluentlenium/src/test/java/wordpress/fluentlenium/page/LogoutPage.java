@@ -1,10 +1,8 @@
 package wordpress.fluentlenium.page;
 
-import org.fluentlenium.core.annotation.PageUrl;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
-@PageUrl("/wp-login.php?loggedout=true")
 public class LogoutPage extends LoginPage {
 
 	@FindBy(id = "wp-admin-bar-my-account")
@@ -23,6 +21,6 @@ public class LogoutPage extends LoginPage {
 			await().until(logoutLink).displayed();
 			logoutLink.click();
 		}
-		return "";
+		return "/wp-login.php?loggedout=true";
 	}
 }
