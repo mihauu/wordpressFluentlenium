@@ -1,6 +1,5 @@
 package wordpress.fluentlenium.test;
 
-import org.fluentlenium.adapter.junit.After;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.configuration.ConfigurationProperties;
 import org.fluentlenium.configuration.FluentConfiguration;
@@ -36,19 +35,6 @@ public class WordpressTest extends FluentTest {
 		user.setPassword("OE3SH!AAetEjfD*K");
 		loginPage.login(user);
 		adminPage.isAt();
-	}
-
-	/*
-	 * sleep to see what is going on
-	 */
-	@After
-	public void after() {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }
