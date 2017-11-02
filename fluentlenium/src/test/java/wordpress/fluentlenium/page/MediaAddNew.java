@@ -12,23 +12,21 @@ public class MediaAddNew extends WordpressPage {
 	@FindBy(id = "upload-flash-bypass")
 	private FluentWebElement uploadByFlash;
 
-	@FindBy(id="async-upload")
+	@FindBy(id = "async-upload")
 	private FluentWebElement fileInput;
-	
-	@FindBy(id="html-upload")
+
+	@FindBy(id = "html-upload")
 	private FluentWebElement submitButton;
-	
+
 	public void switchToClassicUpload() {
-		if(uploadByFlash.present())
+		if (uploadByFlash.present())
 			uploadByFlash.$("a").click();
-		
+
 	}
 
 	public void upload(FileMedia file) {
 		fileInput.fill().with(file.getPath());
 		submitButton.click();
 	}
-	
-	
 
 }
